@@ -1,0 +1,11 @@
+[gd_resource type="PlaneMesh" load_steps=2 format=3 uid="uid://b7bx1dsc30m53"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvyqa"]
+transparency = 1
+vertex_color_use_as_albedo = true
+billboard_mode = 1
+
+[resource]
+material = SubResource("StandardMaterial3D_kvyqa")
+size = Vector2(0.05, 0.05)
+orientation = 2

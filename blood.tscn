@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbjvjdfqbqawv"]
+
+[ext_resource type="PlaneMesh" uid="uid://b7bx1dsc30m53" path="res://blood_plane.tres" id="1_crrxc"]
+
+[sub_resource type="Curve" id="Curve_sandf"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.608309, 0.977246), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_g4xvr"]
+curve = SubResource("Curve_sandf")
+
+[sub_resource type="Gradient" id="Gradient_ay61j"]
+colors = PackedColorArray(1, 1, 1, 0.870588, 0, 0, 0.25098, 0.870588)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jrrs3"]
+gradient = SubResource("Gradient_ay61j")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ycs87"]
+direction = Vector3(0, 1, 0)
+initial_velocity_max = 6.0
+color = Color(1, 0, 0, 0.862745)
+color_ramp = SubResource("GradientTexture1D_jrrs3")
+alpha_curve = SubResource("CurveTexture_g4xvr")
+collision_mode = 1
+collision_friction = 1.0
+collision_bounce = 0.0
+
+[node name="GPUParticles3D" type="GPUParticles3D"]
+amount = 250
+lifetime = 5.0
+explosiveness = 1.0
+collision_base_size = 0.0
+process_material = SubResource("ParticleProcessMaterial_ycs87")
+draw_pass_1 = ExtResource("1_crrxc")

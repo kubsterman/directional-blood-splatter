@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj6ojtg5mrr00"]
+
+[ext_resource type="Script" path="res://blood component.gd" id="1_m8gq6"]
+[ext_resource type="PackedScene" uid="uid://bbjvjdfqbqawv" path="res://blood.tscn" id="2_0l4r8"]
+
+[node name="BloodComponent" type="Node3D"]
+script = ExtResource("1_m8gq6")
+blood = ExtResource("2_0l4r8")
